@@ -1,17 +1,18 @@
 import React from 'react';
-import './App.css';
+import { HashRouter, Switch, Route } from 'react-router-dom'
+import { GlobalStyle, CommonStyle } from './assets/style/global'
 
-interface defaultProps {
-  name?: string
-}
+import Home from './Layout/Home'
 
-function App(props: defaultProps) {
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        { props.name }
-      </header>
-    </div>
+    <HashRouter>
+      <GlobalStyle />
+      <CommonStyle />
+      <Switch>
+        <Route path="/" component={Home}></Route>
+      </Switch>
+    </HashRouter>
   );
 }
 
