@@ -13,7 +13,7 @@ const Entry = ({ handleEntry }: EntryProps) => {
     <CSSTransition
       classNames="fade"
       in={show}
-      timeout={600}
+      timeout={300}
       onExited={handleEntry}
       appear
       unmountOnExit

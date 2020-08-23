@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Route, Redirect, Switch } from 'react-router'
 
 import Entry from '../../pages/Entry'
+import Home from '../../pages/Home'
 import NotFound from '../../pages/NotFound/404'
 
-const Home = () => {
+const MainLayout = () => {
   let [firstEntry, setFirstEntry] = useState(true)
 
   return (
@@ -13,9 +14,8 @@ const Home = () => {
         ? <Entry handleEntry={() => setFirstEntry(false)}></Entry>
         : (
           <Switch>
-            <Route exact path="/" render={ () => <Redirect to="/a"></Redirect> } />
-            <Route path="/a" render={ () => <div>a</div> } />
-            <Route path="/b" render={ () => <div>b</div> } />
+            <Route exact path="/" render={ () => <Redirect to="/home"></Redirect> } />
+            <Route path="/home" component={Home} />
             <Route path="*" component={NotFound}></Route>
           </Switch>
         )
@@ -24,4 +24,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default MainLayout

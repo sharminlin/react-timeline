@@ -1,18 +1,18 @@
 import React from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { GlobalStyle, CommonStyle } from './assets/style/global'
 
-import Home from './Layout/Home'
+import MainLayout from './Layout/Main'
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <GlobalStyle />
       <CommonStyle />
       <Switch>
-        <Route path="/" component={Home}></Route>
+        <Route path="/" component={MainLayout}></Route>
       </Switch>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
