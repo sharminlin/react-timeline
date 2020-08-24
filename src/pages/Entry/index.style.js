@@ -7,7 +7,10 @@ export const Container = styled.div`
   text-align: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .1);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.fade-enter, &.fade-appear {
     opacity: 0;

@@ -27,6 +27,7 @@
     "typescript": "~3.7.2",
     "use-immer": "^0.4.1"
   },
+  "homepage": "/love",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

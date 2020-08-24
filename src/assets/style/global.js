@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
 		line-height: 1;
 	}
 	html, body {
-		background: #f2f3f4;;
+		background: #fff;
 	}
 	ol, ul {
 		list-style: none;

@@ -1,11 +1,15 @@
 import React from 'react'
 import * as Style from './index.style.js'
-import Timer from '../../Components/Timer'
+import Timer from './Timer'
+import Portrait from './Portrait'
+import Heart from '../../Components/Heart'
 
 const Home = () => {
   return (
     <Style.Container>
+      <Portrait />
       <Timer />
+      <Heart />
     </Style.Container>
   )
 }
