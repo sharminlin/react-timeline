@@ -31,7 +31,7 @@ export const Container = styled.div`
   right: 0;
   bottom: 0;
   z-index: 99;
-  background: rgba(233, 30, 99, .3);
+  background: rgba(245, 132, 170, .3);
   display: flex;
   justify-content: center;
   align-items: center;

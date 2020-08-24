@@ -6,7 +6,7 @@ import MainLayout from './Layout/Main'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/love">
       <GlobalStyle />
       <CommonStyle />
       <Switch>
