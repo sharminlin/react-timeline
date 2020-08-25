@@ -2,8 +2,6 @@ import React, { useState, useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import * as Style from './index.style'
 
-import Loading from '../../UI/Loading'
-
 interface EntryProps {
   handleEntry: () => void
 }
