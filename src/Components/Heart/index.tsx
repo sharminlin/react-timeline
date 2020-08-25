@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import * as Style from './index.style.js'
+import * as Style from './index.style'
 import { HeartAnimation } from './draw'
 
 const Heart = () => {

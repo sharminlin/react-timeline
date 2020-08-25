@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Style from './index.style.js'
+import * as Style from './index.style'
 import Timer from './Timer'
 import Portrait from './Portrait'
 import Heart from '../../Components/Heart'

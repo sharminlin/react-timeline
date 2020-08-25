@@ -1,17 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Route, Redirect, Switch } from 'react-router'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState } from '../../store/reducers'
+import { changeFirstEntryAction } from './store'
 
 import Entry from '../../pages/Entry'
 import Home from '../../pages/Home'
 import NotFound from '../../pages/NotFound/404'
+import * as Style from './index.style'
+import { useTapLove } from '../../Hooks/love'
 
 const MainLayout = () => {
-  let [firstEntry, setFirstEntry] = useState(true)
+  const firstEntry = useSelector((state: RootState) => state.main.firstEntry)
+  const dispatch = useDispatch()
+  const { createLove, renderLove } = useTapLove()
 
   return (
-    <>
+    <Style.MainContainer onClick={(e) => createLove(e)}>
       {firstEntry
-        ? <Entry handleEntry={() => setFirstEntry(false)}></Entry>
+        ? <Entry handleEntry={() => dispatch(changeFirstEntryAction(false))}></Entry>
         : (
           <Switch>
             <Route exact path="/" render={ () => <Redirect to="/home"></Redirect> } />
@@ -20,7 +27,8 @@ const MainLayout = () => {
           </Switch>
         )
       }
-    </>
+      { renderLove() }
+    </Style.MainContainer>
   )
 }
 

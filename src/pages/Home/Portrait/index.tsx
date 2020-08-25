@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Style from './index.style.js'
+import * as Style from './index.style'
 
 const boyAvatar = 'http://sharminh.top/images/boy-avatar.jpg'
 const girlAvatar = 'http://sharminh.top/images/girl-avatar.jpg'
