@@ -30,3 +30,29 @@ export const Container = styled.div`
     transition: opacity .3s, transform .3s;
   }
 `
+
+export const Input = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  height: 2rem;
+  border: 1px solid pink;
+  border-radius: 4px;
+  padding: 0 .8rem;
+  background-color: rgba(255, 192, 203, .1);
+
+  .input-prefix {
+    flex-shrink: 0;
+    color: pink;
+    margin-right: .8rem;
+  }
+
+  .input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    color: #999;
+    background: transparent;
+  }
+` 

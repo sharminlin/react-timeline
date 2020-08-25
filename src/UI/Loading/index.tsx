@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Style from './index.style.js'
+import * as Style from './index.style'
 
 // 动画类型
 type LoadingType = 'typing' | 'circle'
