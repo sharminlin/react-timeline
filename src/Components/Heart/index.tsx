@@ -2,6 +2,9 @@ import React, { useRef, useEffect } from 'react'
 import * as Style from './index.style'
 import { HeartAnimation } from './draw'
 
+/**
+ * canvas 画心
+ */
 const Heart = () => {
   const canvasRef = useRef(null)
 

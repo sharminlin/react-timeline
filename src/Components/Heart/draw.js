@@ -46,7 +46,7 @@ export class HeartAnimation {
     // 此时i点就是头
     context.textAlign = 'center'
     context.font = '24px'
-    context.fillText('♥', posList[i][0], posList[i][1])
+    // context.fillText('♥', posList[i][0], posList[i][1])
     this.currentIndex += 10
     this.currentIndex >= posLength && (this.currentIndex = 0)
     requestAnimationFrame(() => this.draw());

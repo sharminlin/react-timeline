@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import * as Style from './index.style'
+import Background from './Background' 
+import Meteor from '../../Components/Meteor'
 
 interface EntryProps {
   handleEntry: () => void
@@ -37,6 +39,8 @@ const Entry = ({ handleEntry }: EntryProps) => {
             onBlur={() => handleConfirm()}
           />
         </Style.Input>
+        <Background></Background>
+        <Meteor></Meteor>
       </Style.Container>
     </CSSTransition>
   )
