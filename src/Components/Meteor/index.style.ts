@@ -22,7 +22,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: transparent;
-  z-index: 10;
+  z-index: 1;
 
   .star {
     position: relative;

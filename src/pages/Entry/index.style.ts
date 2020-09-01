@@ -33,7 +33,7 @@ export const Input = styled.div`
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  z-index: 2;
+  z-index: 10;
   display: flex;
   justify-content: flex-start;
   align-items: center;
