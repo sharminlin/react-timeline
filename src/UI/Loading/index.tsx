@@ -36,11 +36,12 @@ export const $loading = (props: LoadingProps) => {
     render(props)
   }
 
-  render(props)
-
   function destroy () {
     document.body.removeChild($el)
   }
+
+  render(props)
+
   return {
     update,
     destroy

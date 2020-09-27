@@ -1,5 +1,5 @@
 
-export const mock = (request: ApiRequest) => (data: any) => {
+export const mock = (request: ApiRequest) => (data: any): Promise<ResponseBody> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       request(data).then((res: any) => {
