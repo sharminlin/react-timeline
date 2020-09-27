@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import * as Style from './index.style'
 
 // 动画类型
@@ -23,3 +24,25 @@ const Loading = ({ show = false, type = 'typing' }: LoadingProps) => {
 }
 
 export default Loading
+
+export const $loading = (props: LoadingProps) => {
+  let $el = document.createElement('div')
+  document.body.appendChild($el);
+  function render (props: LoadingProps): void {
+    ReactDOM.render(<Loading { ...props } /> ,$el)
+  }
+
+  function update (props: LoadingProps) {
+    render(props)
+  }
+
+  render(props)
+
+  function destroy () {
+    document.body.removeChild($el)
+  }
+  return {
+    update,
+    destroy
+  }
+}
