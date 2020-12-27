@@ -34,7 +34,7 @@
   "homepage": "/love",
   "husky": {
     "hooks": {
-      "post-commit": "node hooks/check-version.js"
+      "post-commit": "node ./hooks/check-version.js"
     }
   },
   "scripts": {
