@@ -17,10 +17,12 @@ const LoveAnimation = keyframes`
   0% {
     opacity: 1;
     transform: translateY(0);
+    font-size: 1rem;
   }
   100% {
     opacity: 0;
     transform: translateY(-4rem);
+    font-size: 1.4rem;
   }
 `
 
@@ -58,7 +60,6 @@ export const useTapLove = () => {
       )
       : null 
   }, [loveMap])
-
 
   return { createLove, renderLove }
 }

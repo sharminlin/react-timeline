@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import * as Style from './index.style'
+import Background from './Background' 
+import Meteor from '../../Components/Meteor'
+import { loginRequest } from '../../api/index'
+import { $loading } from '../../UI/Loading'
 
 interface EntryProps {
   handleEntry: () => void
@@ -11,9 +15,20 @@ const Entry = ({ handleEntry }: EntryProps) => {
 
   const inputRef: React.RefObject<HTMLInputElement> = useRef(null)
 
+  // 确认输入
   function handleConfirm () {
-    if (inputRef.current?.value === 'LNLXM') {
-      setShow(false)
+    if (inputRef.current?.value) {
+      const { destroy } = $loading({ show: true, type: 'circle' })
+      loginRequest({
+        user: 'lover',
+        password: inputRef.current?.value || ''
+      }).then((res: any) => {
+        if (res.code === 200) {
+          setShow(false)
+        }
+      }).finally(() => {
+        destroy()
+      })
     }
   }
 
@@ -37,6 +52,8 @@ const Entry = ({ handleEntry }: EntryProps) => {
             onBlur={() => handleConfirm()}
           />
         </Style.Input>
+        <Background></Background>
+        <Meteor></Meteor>
       </Style.Container>
     </CSSTransition>
   )
