@@ -1,6 +1,6 @@
 {
   "name": "react-timeline",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -34,14 +34,16 @@
   "homepage": "/love",
   "husky": {
     "hooks": {
-      "post-commit": "node hooks/check-version.js"
+      "pre-commit": "npm run list",
+      "post-commit": "node ./hooks/check-version.js"
     }
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,6 +63,7 @@
   "devDependencies": {
     "chalk": "^4.1.0",
     "child_process": "^1.0.2",
+    "eslint-plugin-react": "^7.21.5",
     "husky": "^4.3.6",
     "inquirer": "^7.3.3"
   }

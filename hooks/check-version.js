@@ -5,7 +5,7 @@ const chalk = require('chalk')
 const { exec } = require('child_process')
 const { name: projectName, version: versionCurrent } = require('../package')
 
-const regVersion = /^[1-9]{1}\d*\.\d+\.\d+$/ // 示例: 1.0.0
+const regVersion = /^[0-9]{1}\d*\.\d+\.\d+$/ // 示例: 1.0.0
 // const regVersion = /^\d+\.\d+\.\d+$/ // 示例: 0.0.1 / 1.0.1
 // const regVersion = /^\d+\.\d+\.\d+(-beta.?\d*)?$/ // 示例: 1.0.3 / 0.0.1-beta / 1.0.0-beta.3
 
@@ -17,19 +17,22 @@ inquirer
     {
       type: 'input',
       name: 'version',
-      message: `请确认 ${projectName}/package.json/version 版本号（当前：${versionCurrent}）：\n`,
+      message: `请确认 ${projectName}/package.json/version 版本号（当前：${versionCurrent}）：`,
       default: versionCurrent,
       validate(version) {
         // 校验版本号的格式
         if (!regVersion.test(version)) {
-          console.log(chalk.yellow('输入的版本号无效，请检查格式（示例：1.0.0、2.3.2）'))
+          console.log(chalk.yellow('\n 输入的版本号无效，请检查格式（示例：1.0.0、2.3.2）'))
           return false
         }
         return true
       },
     },
   ])
-  .then(({ version: versionNew }) => {
+  .then(({
+    version: versionNew
+  }) => {
+    console.log('?????')
     if (versionNew !== versionCurrent) {
       // 更新 package.json version，更新时不自动生成 tag
       command(`npm --no-git-tag-version version ${versionNew}`, {}, (error, stdout, stderr) => {
