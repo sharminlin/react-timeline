@@ -8,8 +8,8 @@ export class HeartAnimation {
     // 铺满屏幕
     const width = document.documentElement.clientWidth;
     const height = document.documentElement.clientHeight;
-    canvas.setAttribute("width", width);
-    canvas.setAttribute("height", height);
+    canvas.setAttribute('width', width);
+    canvas.setAttribute('height', height);
 
     // 初始化
     this.posCenter = [width / 2, height / 2];

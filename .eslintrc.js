@@ -19,7 +19,7 @@ module.exports = {
   "rules": {
     "quotes": [
       "warn",
-      "double"
+      "single"
     ]
   }
 }

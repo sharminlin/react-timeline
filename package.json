@@ -34,8 +34,8 @@
   "homepage": "/love",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run list",
-      "post-commit": "node ./hooks/check-version.js"
+      "pre-commit": "npm run lint",
+      "post-commit": "npm run version"
     }
   },
   "scripts": {
@@ -43,7 +43,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "version": "node ./hooks/check-version.js"
   },
   "eslintConfig": {
     "extends": "react-app"
