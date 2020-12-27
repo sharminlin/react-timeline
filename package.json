@@ -32,6 +32,11 @@
     "use-immer": "^0.4.1"
   },
   "homepage": "/love",
+  "husky": {
+    "hooks": {
+      "post-commit": "node hooks/check-version.js"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -58,10 +63,5 @@
     "child_process": "^1.0.2",
     "husky": "^4.3.6",
     "inquirer": "^7.3.3"
-  },
-  "husky": {
-    "hooks": {
-      "post-commit": "exec < /dev/tty && node hooks/check-version.js"
-    }
   }
 }
