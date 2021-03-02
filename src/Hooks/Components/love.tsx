@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react'
 import { useImmer } from 'use-immer'
 import styled, { keyframes } from 'styled-components';
-import { getUid } from '../util/utils'
-
+import { getUid } from '../../util/utils'
 
 interface LoveItem {
   x: number,

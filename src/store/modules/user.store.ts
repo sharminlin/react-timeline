@@ -1,6 +1,6 @@
 import { produce } from 'immer'
 import { AnyAction } from 'redux'
-import { UserState } from './store.d'
+import { UserState } from './user.store.d'
 
 /**
  * type
@@ -9,7 +9,7 @@ import { UserState } from './store.d'
  * reducer
  */
 
-const SET_IS_LOGIN = 'main/SET_IS_LOGIN'
+const SET_IS_LOGIN = 'user/SET_IS_LOGIN'
 
 export const changeIsLoginAction = (data: boolean) => ({ type: SET_IS_LOGIN, data })
 

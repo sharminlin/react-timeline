@@ -5,13 +5,11 @@ import Background from './Background'
 import Meteor from '../../Components/Meteor'
 import { loginRequest } from '../../api/index'
 import { $loading } from '../../UI/Loading'
+import { useLogin } from '../../Hooks/User/login.hook'
 
-interface EntryProps {
-  handleEntry: () => void
-}
-
-const Entry = ({ handleEntry }: EntryProps) => {
+const Login = () => {
   const [ show, setShow ] = useState(true)
+  const { setLogin } = useLogin()
 
   const inputRef: React.RefObject<HTMLInputElement> = useRef(null)
 
@@ -25,6 +23,7 @@ const Entry = ({ handleEntry }: EntryProps) => {
       }).then((res: any) => {
         if (res.code === 200) {
           setShow(false)
+          setLogin(true)
         }
       }).finally(() => {
         destroy()
@@ -37,26 +36,26 @@ const Entry = ({ handleEntry }: EntryProps) => {
       classNames="fade"
       in={show}
       timeout={300}
-      onExited={handleEntry}
       appear
       unmountOnExit
     >
       <Style.Container>
+        <Background />
         <Style.Input>
           <i className="input-prefix i-icon i-icon-lock"></i>
           <input
             ref={inputRef}
             className="input"
             type="password"
-            placeholder="Enter love"
+            placeholder="Enter Love's Password"
             onBlur={() => handleConfirm()}
           />
         </Style.Input>
-        <Background></Background>
+        
         <Meteor></Meteor>
       </Style.Container>
     </CSSTransition>
   )
 }
 
-export default Entry
+export default Login

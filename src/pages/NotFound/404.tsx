@@ -1,3 +1,5 @@
 import React from 'react'
 
-export default () => <div>404</div>
+const NotFound = ()  => <div>404</div>
+
+export default NotFound

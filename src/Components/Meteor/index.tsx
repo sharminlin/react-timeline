@@ -1,6 +1,9 @@
 import React from 'react'
 import * as Style from './index.style'
 
+/**
+ * 流星
+ */
 const Meteor = () => {
   return (
     <Style.Container>
