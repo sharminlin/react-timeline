@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/reducers'
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect, RouteProps } from 'react-router'
 
-const PrivateRoute = (props: any) => {
+const PrivateRoute = (props: RouteProps) => {
   const isLogin = useSelector((state: RootState) => state.user.isLogin)
 
   return isLogin
