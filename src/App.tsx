@@ -4,7 +4,6 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { GlobalStyle, CommonStyle } from './assets/style/global'
 import './assets/style/iconfont.css'
 import store from './store'
-
 import MainLayout from './Layout/Main'
 
 function App() {
