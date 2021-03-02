@@ -4,7 +4,7 @@ import { RootState } from '../../store/reducers'
 import { Route, Redirect } from 'react-router'
 
 const PrivateRoute = (props: any) => {
-  const isLogin = useSelector((state: RootState) => state.main.isLogin)
+  const isLogin = useSelector((state: RootState) => state.user.isLogin)
 
   return isLogin
     ? <Route { ...props } />
