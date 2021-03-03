@@ -1,15 +1,16 @@
 import React, { useState, useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import * as Style from './index.style'
-import Background from './Background' 
-import Meteor from '../../Components/Meteor'
+import Background from '../../Components/Local/Login/Background'
+import Meteor from '../../Components/Local/Login/Meteor'
 import { loginRequest } from '../../api/index'
 import { $loading } from '../../UI/Loading'
 import { useLogin } from '../../Hooks/User/login.hook'
+import { Redirect } from 'react-router'
 
 const Login = () => {
   const [ show, setShow ] = useState(true)
-  const { setLogin } = useLogin()
+  const [ isLogin, setLogin ] = useLogin()
 
   const inputRef: React.RefObject<HTMLInputElement> = useRef(null)
 
@@ -31,30 +32,38 @@ const Login = () => {
     }
   }
 
+  const renderLogin = () => {
+    return (
+      <CSSTransition
+        classNames="fade"
+        in={show}
+        timeout={300}
+        appear
+        unmountOnExit
+      >
+        <Style.Container>
+          <Background />
+          <Style.Input>
+            <i className="input-prefix i-icon i-icon-lock"></i>
+            <input
+              ref={inputRef}
+              className="input"
+              type="password"
+              placeholder="Enter Love's Password"
+              onBlur={() => handleConfirm()}
+            />
+          </Style.Input>
+          
+          <Meteor />
+        </Style.Container>
+      </CSSTransition>
+    )
+  }
+
   return (
-    <CSSTransition
-      classNames="fade"
-      in={show}
-      timeout={300}
-      appear
-      unmountOnExit
-    >
-      <Style.Container>
-        <Background />
-        <Style.Input>
-          <i className="input-prefix i-icon i-icon-lock"></i>
-          <input
-            ref={inputRef}
-            className="input"
-            type="password"
-            placeholder="Enter Love's Password"
-            onBlur={() => handleConfirm()}
-          />
-        </Style.Input>
-        
-        <Meteor></Meteor>
-      </Style.Container>
-    </CSSTransition>
+    isLogin 
+      ? <Redirect to="/home" />
+      : renderLogin()
   )
 }
 

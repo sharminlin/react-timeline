@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import * as Style from './index.style'
-import { diffTime } from '../../../util/date'
+import { diffTime } from '../../../../util/date'
 
 const loveDate = '2019-10-19'
 

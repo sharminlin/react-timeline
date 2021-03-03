@@ -1,6 +1,5 @@
 import { produce } from 'immer'
 import { AnyAction } from 'redux'
-import { UserState } from './user.store.d'
 
 /**
  * type

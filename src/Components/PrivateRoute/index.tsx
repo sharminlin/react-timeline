@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { RootState } from '../../store/reducers'
 import { Route, Redirect, RouteProps } from 'react-router'
 
 const PrivateRoute = (props: RouteProps) => {

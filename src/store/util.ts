@@ -1,5 +1,3 @@
-import { RootState } from './reducers'
-
 export const saveState = (state: RootState) => {
   try {
     const serializedState = JSON.stringify(state);

@@ -1,11 +1,13 @@
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { changeIsLoginAction } from '../../store/modules/user.store'
 
-export const useLogin = () => {
-  const dispatch = useDispatch()
+type UserLogin = () => [boolean, (value: boolean) => void]
 
+export const useLogin: UserLogin = () => {
+  const isLogin: boolean = useSelector((state: RootState) => state.user.isLogin)
+  const dispatch = useDispatch()
   const setLogin = (value: boolean) => {
     dispatch(changeIsLoginAction(value))
   }
-  return { setLogin }
+  return [isLogin, setLogin]
 }
